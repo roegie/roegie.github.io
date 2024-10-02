@@ -198,6 +198,8 @@ h1 {
 }
 
 .weird {
+    object-fit: cover;
+    aspect-ratio: 4/3;
     border: 0.1rem solid #303030;
     border-radius: 1rem;
 }
