@@ -30,15 +30,14 @@ header {
 
 .picture {
     width: 4rem;
-    height: 4rem;
-    border: 0.1rem solid #303030;
+    aspect-ratio: 1/1;
     border-radius: 1rem;
 }
 
 .name {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.6rem;
 }
 
 .label {
@@ -87,7 +86,7 @@ h1 {
 
 .what {
     color: #808080;
-    margin-top: 1.6rem;
+    margin-top: 1rem;
     line-height: 1.6;
 }
 
@@ -153,7 +152,6 @@ h1 {
 .tool > img {
     width: 4rem;
     height: 4rem;
-    border: 0.1rem solid #303030;
     border-radius: 1rem;
 }
 
@@ -197,15 +195,25 @@ h1 {
     opacity: 0;
 }
 
-.weird {
-    object-fit: cover;
-    aspect-ratio: 4/3;
-    border: 0.1rem solid #303030;
-    border-radius: 1rem;
+.about {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
 }
 
-.about {
+.weird {
+    object-fit: cover;
+    object-position: top;
+    width: 4rem;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+}
+
+.about > p {
+    padding: 1rem 1.3rem;
     color: #808080;
+    background: #202020;
+    border-radius: 0.6rem 2rem 2rem 2rem;
 }
 
 footer {
@@ -326,13 +334,12 @@ a {
 }
 
 * {
+    box-sizing: border-box;
+    user-select: none;
     margin: 0;
     padding: 0;
     color: #FFFFFF;
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-focus-ring-color: transparent;
     transition: 0.2s;
-    font-size: 1.6rem;
-    font-family: "Inter", sans-serif;
+    font: 1.6rem Inter, sans-serif;
+    -webkit-tap-highlight-color: transparent;
 }
