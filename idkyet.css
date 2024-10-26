@@ -1,0 +1,140 @@
+html {
+  background: #000000;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  pointer-events: auto;
+  position: relative;
+  gap: 10px;
+  padding: 10px;
+  background: #202020;
+  border: 1px solid #303030;
+  border-radius: 16px;
+  animation: slide-up 0.6s;
+}
+
+nav > a {
+  display: grid;
+  place-items: center;
+}
+
+.nav-btn {
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  color: #808080;
+  border-radius: 10px;
+  font-size: 20px;
+  z-index: 1;
+}
+
+.current {
+  color: #9146FF;
+  background: #9146FF30;
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    scale: 0.6;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+    transform: none;
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+main {
+  padding: 16px;
+}
+
+#catfact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  gap: 10px;
+  padding: 16px;
+  background: #202020;
+  border: 1px solid #303030;
+  border-radius: 16px;
+  animation: slide-down 0.6s;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  user-select: none;
+  gap: 5px;
+  padding: 2px 6px;
+  color: #9146FF;
+  background: #9146FF30;
+  border-radius: 6px;
+}
+
+#catfact i {
+  color: inherit;
+  font-size: 12px;
+}
+
+.new-fact {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: #FFFFFF;
+  background: #303030;
+}
+
+.new-fact:active {
+  background: #404040;
+}
+
+.fact {
+  color: #AAAAAA;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  color: #FFFFFF;
+  background: #9146FF30;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #FFFFFF;
+  transition: 0.3s;
+  font: 16px Outfit, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
