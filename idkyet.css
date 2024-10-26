@@ -7,7 +7,7 @@ header {
   justify-content: center;
   pointer-events: none;
   position: fixed;
-  bottom: 10px;
+  bottom: 16px;
   width: 100%;
   z-index: 1000;
 }
@@ -81,7 +81,7 @@ main {
   align-items: flex-start;
   position: relative;
   gap: 10px;
-  padding: 16px;
+  padding: 10px;
   background: #202020;
   border: 1px solid #303030;
   border-radius: 16px;
@@ -96,7 +96,7 @@ main {
   padding: 2px 6px;
   color: #9146FF;
   background: #9146FF30;
-  border-radius: 6px;
+  border-radius: 10px;
 }
 
 #catfact i {
@@ -106,8 +106,8 @@ main {
 
 .new-fact {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 10px;
+  right: 10px;
   color: #FFFFFF;
   background: #303030;
 }
