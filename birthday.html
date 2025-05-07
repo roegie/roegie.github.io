@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>:3</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap">
+  <style>
+    html {
+      height: 100dvh;
+      background: #101010;
+      background-image: url("images/bg.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      font-size: 10px;
+    }
+    body {
+      display: grid;
+      justify-content: center;
+      padding: 0 0 12rem;
+    }
+    main {
+      max-width: 480px;
+    }
+    #profile {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      padding: 1rem;
+    }
+    #profile > * {
+      width: 100%;
+      border-radius: 1.6rem;
+    }
+    .spotify-container {
+      position: relative;
+      left: 0;
+      width: 100%;
+      height: 152px;
+    }
+    .spotify-frame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 1.6rem;
+    }
+    .skin {
+      aspect-ratio: 1/1;
+      background: #20202080;
+      backdrop-filter: blur(6px);
+    }
+    .cat-image {
+      aspect-ratio: 1/1;
+      background: #202020;
+      border-radius: 1.6rem;
+      filter: grayscale(100%);
+    }
+    .tell {
+      color: #808080;
+      padding: 1rem;
+      background: #20202080;
+      backdrop-filter: blur(6px);
+      outline: 0.1rem solid #FFFFFF20;
+      outline-offset: -0.1rem;
+    }
+    .pompurin {
+      position: fixed;
+      pointer-events: none;
+      left: 50%;
+      bottom: -20px;
+      width: 16rem;
+      background: transparent;
+      outline: none;
+      transform: translateX(-50%);
+      z-index: 1000;
+    }
+    #anim {
+      display: grid;
+      place-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100dvh;
+      background: #101010;
+      transition: 2s;
+      z-index: 10000;
+    }
+    .greet {
+      text-align: center;
+      max-width: 80%;
+      color: #808080;
+      font: 6rem "Lavishly Yours", cursive;
+      animation: greet 2s;
+    }
+    .anim-done {
+      pointer-events: none;
+      opacity: 0;
+    }
+    @keyframes greet {
+      0% {
+        opacity: 0;
+        scale: 0.9;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        scale: 1;
+        transform: none;
+      }
+    }
+    .wide {
+      grid-column: span 2;
+    }
+    img {
+      object-fit: cover;
+      width: 100%;
+      background: #202020;
+      border-radius: 1.6rem;
+      outline: 0.1rem solid #FFFFFF20;
+      outline-offset: -0.1rem;
+    }
+    a {
+      text-decoration: none;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      color: #FFFFFF;
+      transition: 0.3s;
+      font: 1.6rem Outfit, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section id="profile">
+      <img class="pfp" src="images/sachie.jpg" alt="sachie">
+      <img class="skin" src="images/sachie-1.png" alt="sachie">
+      <div class="spotify-container wide">
+        <iframe class="spotify-frame" src="https://open.spotify.com/embed/playlist/67K7uspSKpKvntJ0IA78j8?theme=0" allowfullscreen allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      </div>
+      <img class="cat-image">
+      <img src="images/silly.jpg" alt="sachie">
+      <p class="tell wide">FIRSTLY, i'm sorry if there isn't much content here, i was planning to work on this this week before your birthday :( but i got kinda busyyy. SO WELL UH LET ME EXPLAIN TwT, what you see up there is a minecraft skin i made for you, you could use them (soon) or not it's up to you but i jus
