@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #000000;
+  transition: 0.3s;
+  font: 500 16px Poppins;
+}
+
+html {
+  background: #FFFFFF;
+}
+
+body, header, main {
+  width: 100%;
+}
+
+body {
+  padding: 76px 0 80px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  max-width: 720px;
+  height: 60px;
+  padding: 10px;
+  background: #00000008;
+  border: 1px solid #00000018;
+  border-radius: 100px;
+  backdrop-filter: blur(10px);
+  transform: translateX(-50%);
+}
+
+.logo {
+  padding: 8px 16px;
+  color: #FFFFFF;
+  background: #000000;
+  border-radius: 100px;
+}
+
+.stuff {
+  display: flex;
+  gap: 10px;
+}
+
+.stuff div {
+  padding: 8px 16px;
+  background: #00000008;
+  border: 1px solid #00000018;
+  border-radius: 100px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fade-in 1s;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 60px;
+}
+
+.table-wrap {
+  width: 100%;
+  max-width: 960px;
+  background: #00000008;
+  border: 1px solid #00000018;
+  border-radius: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 16px;
+}
+
+thead {
+  border-bottom: 1px solid #00000018;
+}
+
+thead th {
+  text-align: center;
+  padding: 10px;
+}
+
+thead th:first-child {
+  text-align: left;
+}
+
+thead th:hover {
+  background: green;
+}
+
+tbody td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #0000018;
+}
+
+tbody td:first-child {
+  text-align: left;
+}
+
+.quota-reached {
+  color: #20AA20;
+}
+
+.quota-unreached {
+  color: #AA2020;
+}
