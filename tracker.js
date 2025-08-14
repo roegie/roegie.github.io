@@ -1,4 +1,3 @@
-// ---------------- SPREADSHEET / LEADERBOARD ----------------
 const SPREADSHEET_ID = '1c3IPAxWDR9RZnEB1Nw8syOfI4fhAAoYJvrtLZMXiZjA';
 const GID = '1119948727';
 const POLL_MS = 5000;
@@ -69,7 +68,7 @@ async function fetchAndRender() {
 
     const snapshot = JSON.stringify(data);
     if (snapshot === lastSnapshot) {
-      document.getElementById('last-update').textContent = 'Leaderboard up to date';
+      document.getElementById('last-update').textContent = 'Up to date';
       return;
     }
     lastSnapshot = snapshot;
@@ -105,7 +104,6 @@ async function fetchAndRender() {
 fetchAndRender();
 setInterval(fetchAndRender, POLL_MS);
 
-// ---------------- PHILIPPINES CLOCK ----------------
 async function fetchPHTime() {
   try {
     const res = await fetch('https://timeapi.io/api/timezone/zone?timeZone=Asia%2FManila');
