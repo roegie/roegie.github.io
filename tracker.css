@@ -96,8 +96,8 @@ thead th:first-child {
   text-align: left;
 }
 
-thead th:hover {
-  background: green;
+tbody td:hover, tbody td:hover > tr {
+  background: #00000008;
 }
 
 tbody td {
