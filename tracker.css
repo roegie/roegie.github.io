@@ -109,3 +109,8 @@ tbody td {
 tbody td:first-child {
   text-align: left;
 }
+
+::selection {
+  color: #FFFFFF;
+  background: #000000;
+}
