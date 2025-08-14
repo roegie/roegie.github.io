@@ -4,7 +4,7 @@
   padding: 0;
   color: #000000;
   transition: 0.3s;
-  font: 500 16px Urbanist, sans-serif;
+  font: 500 16px Inter, sans-serif;
 }
 
 html {
@@ -108,12 +108,4 @@ tbody td {
 
 tbody td:first-child {
   text-align: left;
-}
-
-.quota-reached {
-  color: #20AA20;
-}
-
-.quota-unreached {
-  color: #AA2020;
 }
