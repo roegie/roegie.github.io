@@ -4,7 +4,7 @@
   padding: 0;
   color: #000000;
   transition: 0.3s;
-  font: 500 16px Poppins;
+  font: 500 16px Inter, sans-serif;
 }
 
 html {
