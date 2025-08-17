@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Time</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Modern+Antiqua&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+  }
+  html {
+    background: #000000;
+  }
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+  }
+  time {
+    font: 100px 'Modern Antiqua', serif;
+  }
+</style>
+</head>
+<body>
+  <main>
+    <time>00:00:00</time>
+  </main>
+  <script>
+  async function updateTime() {
+  try {
+    const res = await fetch("https://timeapi.io/api/timezone/zone?timeZone=Asia/Manila");
+    const data = await res.json();
+    const dateTime = new Date(data.currentLocalTime);
+    let hh = dateTime.getHours() % 12 || 12;
+    const mm = String(dateTime.getMinutes()).padStart(2, "0");
+    const ss = String(dateTime.getSeconds()).padStart(2, "0");
+    hh = String(hh).padStart(2, "0");
+    document.querySelector("time").textContent = `${hh}:${mm}:${ss}`;
+    } catch (e) {
+    console.error("Error fetching time:", e);
+    }
+    }
+    updateTime();
+    setInterval(updateTime, 100);
+</script>
+</body>
+</html>
