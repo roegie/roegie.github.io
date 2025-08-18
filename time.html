@@ -1,53 +1,65 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Time</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Modern+Antiqua&display=swap">
-<link rel="stylesheet" href="style.css">
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    color: #FFFFFF;
-  }
-  html {
-    background: #000000;
-  }
-  main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-  }
-  time {
-    font: 200px 'Modern Antiqua', serif;
-  }
-</style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Time</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Modern+Antiqua&display=swap">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      color: #FFFFFF;
+    }
+    html {
+      background: #000000;
+    }
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+    }
+    time {
+      font: 200px 'Modern Antiqua', serif;
+    }
+  </style>
 </head>
 <body>
   <main>
-    <time>00:00:00</time>
+    <time>0:00:00</time>
   </main>
   <script>
-  async function updateTime() {
-  try {
-    const res = await fetch("https://timeapi.io/api/timezone/zone?timeZone=Asia/Manila");
-    const data = await res.json();
-    const dateTime = new Date(data.currentLocalTime);
-    let hh = dateTime.getHours() % 12 || 12;
-    const mm = String(dateTime.getMinutes()).padStart(2, "0");
-    const ss = String(dateTime.getSeconds()).padStart(2, "0");
-    hh = String(hh).padStart(2, "0");
-    document.querySelector("time").textContent = `${hh}:${mm}:${ss}`;
-    } catch (e) {
-    console.error("Error fetching time:", e);
+    let currentDate = null;
+
+    function displayTime() {
+      if (!currentDate) return;
+      let h = currentDate.getHours() % 12 || 12;
+      const mm = String(currentDate.getMinutes()).padStart(2, "0");
+      const ss = String(currentDate.getSeconds()).padStart(2, "0");
+      document.querySelector("time").textContent = `${h}:${mm}:${ss}`;
+      currentDate.setSeconds(currentDate.getSeconds() + 1);
     }
+
+    async function fetchTime() {
+      try {
+        const res = await fetch("https://timeapi.io/api/timezone/zone?timeZone=Asia/Manila");
+        const data = await res.json();
+        currentDate = new Date(data.currentLocalTime);
+        displayTime();
+      } catch (e) {
+        console.error("Error fetching time:", e);
+      }
     }
-    updateTime();
-    setInterval(updateTime, 1000);
-</script>
+
+    async function startClock() {
+      await fetchTime();
+      setInterval(displayTime, 1000);
+      setInterval(fetchTime, 30 * 60 * 1000);
+    }
+
+    startClock();
+  </script>
 </body>
 </html>
